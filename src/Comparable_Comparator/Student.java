@@ -1,8 +1,8 @@
-package HashMap_HashSet;
+package Comparable_Comparator;
 
-public class Student {
+public class Student implements Comparable <Student> {
     private String name;
-    private int age;
+    private Integer age;
     private String address;
 
     public Student() {
@@ -24,9 +24,6 @@ public class Student {
     }
 
     public int getAge() {
-        if(age < 0) {
-            System.out.println("Không hợp lệ");
-        };
         return age;
     }
 
@@ -45,5 +42,10 @@ public class Student {
     @Override
     public String toString() {
         return "Student @name = " + name + "; age = " + age + "; address = " + address;
+    }
+
+    @Override
+    public int compareTo(Student student) {
+        return this.getName().compareTo(student.getName());
     }
 }
